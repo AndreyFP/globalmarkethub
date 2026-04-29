@@ -193,6 +193,9 @@
       border-color: rgba(34,211,238,.45);
       box-shadow: 0 24px 70px rgba(34,211,238,.12);
     }
+    .clickable { display: block; cursor: pointer; }
+    .more { display: inline-block; margin-top: 16px; color: #67e8f9; font-weight: 900; }
+    .anchor-card { scroll-margin-top: 96px; }
     .product-img { transition: .35s ease; }
     .product:hover .product-img { transform: scale(1.04); filter: saturate(1.2); }
     .mini { transition: .25s ease; }
@@ -261,9 +264,9 @@
           </div>
         </div>
         <div class="cards">
-          <article class="card"><div class="icon">🌍</div><h3>Поиск поставщиков</h3><p>Подбираем варианты под бюджет, сроки, объём и задачу.</p></article>
-          <article class="card"><div class="icon">📦</div><h3>Подбор товаров</h3><p>Ищем перспективные товары для магазина, маркетплейса или личного заказа.</p></article>
-          <article class="card"><div class="icon">🚀</div><h3>Запуск направления</h3><p>Помогаем быстро собрать стартовый план: что продавать, как упаковать и куда вести клиентов.</p></article>
+          <a class="card clickable" href="#suppliers"><div class="icon">🌍</div><h3>Поиск поставщиков</h3><p>Подбираем варианты под бюджет, сроки, объём и задачу.</p><span class="more">Подробнее →</span></a>
+          <a class="card clickable" href="#products"><div class="icon">📦</div><h3>Подбор товаров</h3><p>Ищем перспективные товары для магазина, маркетплейса или личного заказа.</p><span class="more">Открыть каталог →</span></a>
+          <a class="card clickable" href="#launch"><div class="icon">🚀</div><h3>Запуск направления</h3><p>Помогаем быстро собрать стартовый план: что продавать, как упаковать и куда вести клиентов.</p><span class="more">Смотреть план →</span></a>
         </div>
       </div>
     </section>
@@ -277,10 +280,27 @@
           </div>
         </div>
         <div class="products">
-          <div class="product"><div class="product-img">⌚</div><div class="product-body"><small>Electronics</small><h3>Гаджеты</h3><p>Умные часы, аксессуары, устройства.</p></div></div>
-          <div class="product"><div class="product-img">💻</div><div class="product-body"><small>Business</small><h3>Техника</h3><p>Ноутбуки, комплектующие, офисные решения.</p></div></div>
-          <div class="product"><div class="product-img">🏪</div><div class="product-body"><small>Retail</small><h3>Для продаж</h3><p>Товары для магазинов и маркетплейсов.</p></div></div>
-          <div class="product"><div class="product-img">🔎</div><div class="product-body"><small>Custom</small><h3>Под заказ</h3><p>Опишите задачу — подберём варианты.</p></div></div>
+          <a class="product clickable" href="#gadgets"><div class="product-img">⌚</div><div class="product-body"><small>Electronics</small><h3>Гаджеты</h3><p>Умные часы, аксессуары, устройства.</p><span class="more">Перейти →</span></div></a>
+          <a class="product clickable" href="#tech"><div class="product-img">💻</div><div class="product-body"><small>Business</small><h3>Техника</h3><p>Ноутбуки, комплектующие, офисные решения.</p><span class="more">Перейти →</span></div></a>
+          <a class="product clickable" href="#retail"><div class="product-img">🏪</div><div class="product-body"><small>Retail</small><h3>Для продаж</h3><p>Товары для магазинов и маркетплейсов.</p><span class="more">Перейти →</span></div></a>
+          <a class="product clickable" href="#custom"><div class="product-img">🔎</div><div class="product-body"><small>Custom</small><h3>Под заказ</h3><p>Опишите задачу — подберём варианты.</p><span class="more">Перейти →</span></div></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="details" class="section">
+      <div class="container">
+        <div class="section-head"><h2>Структура проекта</h2><p>Каждый блок теперь кликабельный и ведёт к нужному направлению.</p></div>
+        <div class="cards">
+          <div id="suppliers" class="card anchor-card"><div class="icon">🤝</div><h3>Поставщики</h3><p>Собираем варианты поставщиков, сравниваем условия, сроки, минимальные партии и риски.</p><a class="btn secondary" href="#contact">Запросить подбор</a></div>
+          <div id="launch" class="card anchor-card"><div class="icon">📈</div><h3>Запуск продаж</h3><p>Помогаем определить нишу, упаковку предложения, стартовый ассортимент и план продвижения.</p><a class="btn secondary" href="#contact">Обсудить запуск</a></div>
+          <div id="custom" class="card anchor-card"><div class="icon">🧩</div><h3>Индивидуальный запрос</h3><p>Работаем с нестандартными задачами: от поиска редкого товара до подготовки бизнес-направления.</p><a class="btn secondary" href="#contact">Оставить запрос</a></div>
+        </div>
+        <div style="height:18px"></div>
+        <div class="cards">
+          <div id="gadgets" class="card anchor-card"><div class="icon">⌚</div><h3>Гаджеты</h3><p>Смарт-часы, аксессуары, электроника, популярные товары для онлайн-продаж.</p><a class="btn secondary" href="#contact">Хочу гаджеты</a></div>
+          <div id="tech" class="card anchor-card"><div class="icon">💻</div><h3>Техника</h3><p>Ноутбуки, комплектующие, офисная техника и решения для работы.</p><a class="btn secondary" href="#contact">Подобрать технику</a></div>
+          <div id="retail" class="card anchor-card"><div class="icon">🏪</div><h3>Товары для продаж</h3><p>Идеи для маркетплейсов, магазинов, витрин и тестовых партий.</p><a class="btn secondary" href="#contact">Найти товары</a></div>
         </div>
       </div>
     </section>
