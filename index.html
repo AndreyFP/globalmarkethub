@@ -136,6 +136,70 @@
       h1 { letter-spacing: -1px; }
       .hero { padding-top: 56px; }
     }
+  
+    /* Premium animation layer */
+    @keyframes floatY {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-14px); }
+    }
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 0 0 rgba(34,211,238,0); }
+      50% { box-shadow: 0 0 42px rgba(34,211,238,.35); }
+    }
+    @keyframes shimmer {
+      0% { background-position: -220% center; }
+      100% { background-position: 220% center; }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(26px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-28px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    .hero h1 {
+      background: linear-gradient(90deg, #fff, #bfdbfe, #67e8f9, #fff);
+      background-size: 240% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: shimmer 7s linear infinite;
+    }
+    .pill, .lead, .actions, .trust { animation: slideInLeft .8s ease both; }
+    .lead { animation-delay: .08s; }
+    .actions { animation-delay: .16s; }
+    .trust { animation-delay: .24s; }
+    .visual { animation: fadeUp .9s ease both, floatY 6s ease-in-out infinite 1s; }
+    .brand-mark { animation: pulseGlow 3s ease-in-out infinite; }
+    .card, .product, .step { animation: fadeUp .75s ease both; }
+    .cards .card:nth-child(2), .products .product:nth-child(2), .steps .step:nth-child(2) { animation-delay: .08s; }
+    .cards .card:nth-child(3), .products .product:nth-child(3), .steps .step:nth-child(3) { animation-delay: .16s; }
+    .products .product:nth-child(4), .steps .step:nth-child(4) { animation-delay: .24s; }
+    .btn { position: relative; overflow: hidden; }
+    .btn:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -120%;
+      width: 80%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.35), transparent);
+      transform: skewX(-20deg);
+      transition: .55s ease;
+    }
+    .btn:hover:before { left: 140%; }
+    .card:hover, .product:hover, .step:hover {
+      border-color: rgba(34,211,238,.45);
+      box-shadow: 0 24px 70px rgba(34,211,238,.12);
+    }
+    .product-img { transition: .35s ease; }
+    .product:hover .product-img { transform: scale(1.04); filter: saturate(1.2); }
+    .mini { transition: .25s ease; }
+    .mini:hover { transform: translateY(-4px); background: rgba(255,255,255,.12); }
+    @media (prefers-reduced-motion: reduce) {
+      *, *:before, *:after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+    }
   </style>
 </head>
 <body>
